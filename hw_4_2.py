@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def get_cats_info(path):
     cats_list = []
     
@@ -18,6 +20,9 @@ def get_cats_info(path):
         return None
 
 # Приклад використання
-cats_info = get_cats_info("D:\git_projects\hw_module_4\hw_4_2.txt")
+git_repo_path = Path(__file__).parent #шлях до Github
+relative_path = git_repo_path / "hw_4_2.txt" #шлях до файлу в репозиторії
+
+cats_info = get_cats_info(relative_path)
 if cats_info is not None:
     print(cats_info)
