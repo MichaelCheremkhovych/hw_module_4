@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def total_salary(path):
     total = 0
     count = 0
@@ -22,6 +24,11 @@ def total_salary(path):
         return None, None
 
 # Приклад використання
-total, average = total_salary("D:\git_projects\hw_module_4\hw_4_1.txt")
+
+git_repo_path = Path(__file__).parent #шлях до Github
+relative_path = git_repo_path / "hw_4_1.txt" #шлях до файлу в репозиторії
+
+total, average = total_salary(relative_path)
+
 if total is not None and average is not None:
     print(f"Загальна сума заробітної плати: {total}, Середня заробітна плата: {average}")
